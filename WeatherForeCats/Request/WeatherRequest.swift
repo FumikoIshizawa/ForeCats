@@ -37,6 +37,7 @@ extension WeatherRequestType where Self.Response: Mappable {
 
 struct GetDailyForecastsRequest: WeatherRequestType {
   typealias Response = Weather
+  var cityId = "400040"
   
   var path: String {
     return "v1"
@@ -47,6 +48,6 @@ struct GetDailyForecastsRequest: WeatherRequestType {
   }
   
   var parameters: [String : AnyObject] {
-    return ["city" : "400040"]
+    return ["city" : cityId]
   }
 }

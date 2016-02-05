@@ -9,13 +9,15 @@
 import UIKit
 
 class CityViewController: UIViewController {
+  var cities: [[String : String]]?
   @IBOutlet weak var tableView: UITableView!
-  @IBOutlet weak var cityNavigationItem: UINavigationItem!
+  var cellTappedBlock: ((String, String) -> Void)?
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
     prepareForUseTableView()
+    navigationItem.title = "市町村を選択"
   }
 
   override func didReceiveMemoryWarning() {
@@ -32,11 +34,17 @@ class CityViewController: UIViewController {
 // MARK: - UITableViewDelegate
 extension CityViewController: UITableViewDelegate {
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 4
+    return cities?.count ?? 0
   }
   
   func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
     return 44
+  }
+  
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    if let cellTappedBlock = cellTappedBlock, title = cities![indexPath.row]["title"], id = cities![indexPath.row]["id"] {
+      cellTappedBlock(title, id)
+    }
   }
 }
 
@@ -49,6 +57,11 @@ extension CityViewController: UITableViewDataSource {
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = UITableViewCell()
+    if let title = cities![indexPath.row]["title"] {
+      cell.textLabel?.text = title
+    }
+    cell.textLabel?.font = UIFont(name: "HiraKakuProN-W3", size: 14)
+    
     return cell
   }
 }

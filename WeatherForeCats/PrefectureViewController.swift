@@ -9,20 +9,22 @@
 import UIKit
 
 class PrefectureViewController: UIViewController {
-  @IBOutlet weak var tableView: UITableView!
-  @IBOutlet weak var prefectureNavigationItem: UINavigationItem!
+  let district = District()
+  @IBOutlet private weak var tableView: UITableView!
+  var dismissWindowBlock: ((String, String) -> Void)?
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     prepareForUseTableView()
+    district.loadDataFromXML()
     let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Stop, target: self, action: "onClickDoneButton:")
-    prefectureNavigationItem.setRightBarButtonItem(doneButton, animated: true)
+    navigationItem.setRightBarButtonItem(doneButton, animated: true)
+    navigationItem.title = "都道府県を選択"
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
   
   func prepareForUseTableView() {
@@ -53,7 +55,16 @@ extension PrefectureViewController: UITableViewDelegate {
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     let storyBoard = UIStoryboard(name: "CityViewController", bundle: nil)
     if let cityViewController = storyBoard.instantiateInitialViewController() as? CityViewController {
-      self.presentViewController(cityViewController, animated: true, completion: nil)
+      if let dic = district.dic[indexPath.row]["cities"] as? [[String : String]] {
+        cityViewController.cities = dic
+      }
+      cityViewController.cellTappedBlock = { [weak self] (title: String, id: String) in
+        if let dismissWindowBlock = self!.dismissWindowBlock {
+          dismissWindowBlock(title, id)
+        }
+        self?.dismissViewControllerAnimated(true, completion: nil)
+      }
+      navigationController?.pushViewController(cityViewController, animated: true)
     }
   }
 }
@@ -67,6 +78,11 @@ extension PrefectureViewController: UITableViewDataSource {
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = UITableViewCell()
+    if let title = district.dic[indexPath.row]["title"] as? String {
+      cell.textLabel?.text = title
+    }
+    cell.textLabel?.font = UIFont(name: "HiraKakuProN-W3", size: 14)
+    
     return cell
   }
 }

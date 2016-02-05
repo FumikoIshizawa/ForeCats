@@ -25,8 +25,6 @@ class District: NSObject {
             if let cities = cities, prefName = prefName {
               dic.append(["title": prefName, "cities": cities])
             }
-
-            print(dic)
           }
         }
         catch let error as NSError {

@@ -12,9 +12,15 @@ import UIKit
 class TopViewModel: NSObject {
   var todayWeatherTitle: String = "指定されていません"
   var todayWeatherDetail: String = "指定されていません"
+  var successBlock: (Void -> Void)?
 
-  func prepareForeUseView() {
-    //requestDailyForecasts()
+  func prepareForeUse(id: String, block: (Void -> Void)) {
+    successBlock = block
+    requestDailyForecasts(id)
+  }
+  
+  func updateData(id: String) {
+    requestDailyForecasts(id)
   }
 }
 
@@ -22,13 +28,17 @@ class TopViewModel: NSObject {
 // MARK: - Request
 
 extension TopViewModel {
-  private func requestDailyForecasts() {
-    let request = GetDailyForecastsRequest()
+  private func requestDailyForecasts(id: String) {
+    var request = GetDailyForecastsRequest()
+    request.cityId = id
     Session.sendRequest(request) { result in
       switch result {
       case .Success(let weather):
         self.todayWeatherTitle = weather.title ?? "指定されていません"
         self.todayWeatherDetail = weather.description["text"] ?? "指定されていません"
+        if let successBlock = self.successBlock {
+          successBlock()
+        }
         print(weather.description)
       case .Failure(let error):
         print("error: \(error)")
