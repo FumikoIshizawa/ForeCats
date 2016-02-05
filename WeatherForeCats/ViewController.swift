@@ -6,20 +6,22 @@
 //  Copyright © 2016年 fumikoi. All rights reserved.
 //
 
+import APIKit
 import UIKit
 
 class ViewController: UIViewController {
+  let topViewModel = TopViewModel()
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    topViewModel.prepareForeUseView()
   }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
 
+  
 
 }
 
