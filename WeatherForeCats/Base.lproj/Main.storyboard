@@ -36,31 +36,71 @@
                                             <constraint firstAttribute="width" constant="150" id="ZIW-w1-4Qb"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E0E-Ui-Mkh">
-                                        <rect key="frame" x="279" y="190" width="42" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E0E-Ui-Mkh">
+                                        <rect key="frame" x="200" y="190" width="200" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="YQG-m8-LkJ"/>
+                                            <constraint firstAttribute="height" constant="40" id="zCb-l0-0Zr"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Lab">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="17" name="HiraginoSans-W3"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="zCb-l0-0Zr"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bb6-qi-3lk">
+                                        <rect key="frame" x="150" y="212" width="300" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="bwH-en-RUi"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Label">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="14" name="HiraginoSans-W2"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W2S-l1-yDP">
-                                        <rect key="frame" x="0.0" y="235.5" width="600" height="150"/>
+                                        <rect key="frame" x="0.0" y="254" width="600" height="150"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="MnG-o5-b6i"/>
                                         </constraints>
                                     </scrollView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="bb6-qi-3lk" firstAttribute="centerX" secondItem="QHt-rq-UdG" secondAttribute="centerX" id="MIN-Cz-xan"/>
                                     <constraint firstItem="W2S-l1-yDP" firstAttribute="centerX" secondItem="QHt-rq-UdG" secondAttribute="centerX" id="Mnr-v9-eGg"/>
                                     <constraint firstAttribute="trailing" secondItem="W2S-l1-yDP" secondAttribute="trailing" id="Pgf-SM-X5x"/>
                                     <constraint firstItem="E0E-Ui-Mkh" firstAttribute="top" secondItem="o73-WA-zim" secondAttribute="bottom" constant="15" id="YXe-Y5-8cU"/>
+                                    <constraint firstItem="W2S-l1-yDP" firstAttribute="top" secondItem="bb6-qi-3lk" secondAttribute="bottom" constant="25" id="bJH-9t-vPI"/>
                                     <constraint firstItem="W2S-l1-yDP" firstAttribute="top" secondItem="E0E-Ui-Mkh" secondAttribute="bottom" constant="25" id="csr-4j-PkZ"/>
                                     <constraint firstAttribute="bottom" secondItem="W2S-l1-yDP" secondAttribute="bottom" constant="25" id="eJk-cL-gDM"/>
+                                    <constraint firstItem="bb6-qi-3lk" firstAttribute="top" secondItem="E0E-Ui-Mkh" secondAttribute="bottom" constant="5" id="g22-j6-ava"/>
                                     <constraint firstItem="W2S-l1-yDP" firstAttribute="leading" secondItem="QHt-rq-UdG" secondAttribute="leading" id="gBD-3e-2Mf"/>
                                     <constraint firstItem="o73-WA-zim" firstAttribute="top" secondItem="QHt-rq-UdG" secondAttribute="top" constant="25" id="uvE-N9-9cb"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="csr-4j-PkZ"/>
+                                    </mask>
+                                </variation>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.93000000000000005" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="QHt-rq-UdG" firstAttribute="top" secondItem="Wve-ve-DTp" secondAttribute="bottom" id="4ZC-nV-zEw"/>
                             <constraint firstItem="z2Q-Ig-Vrl" firstAttribute="top" secondItem="QHt-rq-UdG" secondAttribute="bottom" id="BwZ-mS-O1s"/>
@@ -85,6 +125,12 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="todayWeatherDetailLabel" destination="bb6-qi-3lk" id="G50-pY-6mB"/>
+                        <outlet property="todayWeatherImageView" destination="o73-WA-zim" id="IA0-55-naR"/>
+                        <outlet property="todayWeatherTitleLabel" destination="E0E-Ui-Mkh" id="Mjh-Li-mAb"/>
+                        <outlet property="topNavigationItem" destination="plN-vE-efb" id="Etg-Z8-ebM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y04-zF-LzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

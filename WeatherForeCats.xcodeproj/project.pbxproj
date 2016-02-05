@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E0BA8001C64827400C5A898 /* PrefectureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0BA7FF1C64827400C5A898 /* PrefectureViewController.swift */; };
+		9E0BA8021C64829100C5A898 /* PrefectureViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E0BA8011C64829100C5A898 /* PrefectureViewController.storyboard */; };
+		9E0BA8041C6487DA00C5A898 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0BA8031C6487DA00C5A898 /* CityViewController.swift */; };
+		9E0BA8061C6487E800C5A898 /* CityViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E0BA8051C6487E800C5A898 /* CityViewController.storyboard */; };
 		9EB1E7931C6444DB00000764 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB1E7921C6444DB00000764 /* AppDelegate.swift */; };
 		9EB1E7951C6444DB00000764 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB1E7941C6444DB00000764 /* ViewController.swift */; };
 		9EB1E7981C6444DB00000764 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EB1E7961C6444DB00000764 /* Main.storyboard */; };
@@ -23,6 +27,8 @@
 		9EB1E7D51C64515400000764 /* WeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB1E7D41C64515400000764 /* WeatherRequest.swift */; };
 		9EB1E7D71C64518000000764 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB1E7D61C64518000000764 /* ObjectMapper.framework */; };
 		9EB1E7D81C64518000000764 /* ObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB1E7D61C64518000000764 /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9EEB699F1C64673D005BCA74 /* District.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEB699E1C64673D005BCA74 /* District.swift */; };
+		9EEB69A21C64725E005BCA74 /* primary_area.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9EEB69A11C64725E005BCA74 /* primary_area.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +65,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9E0BA7FF1C64827400C5A898 /* PrefectureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PrefectureViewController.swift; sourceTree = "<group>"; };
+		9E0BA8011C64829100C5A898 /* PrefectureViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PrefectureViewController.storyboard; sourceTree = "<group>"; };
+		9E0BA8031C6487DA00C5A898 /* CityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
+		9E0BA8051C6487E800C5A898 /* CityViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CityViewController.storyboard; sourceTree = "<group>"; };
 		9EB1E78F1C6444DB00000764 /* WeatherForeCats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForeCats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EB1E7921C6444DB00000764 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EB1E7941C6444DB00000764 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +88,8 @@
 		9EB1E7D21C6450AA00000764 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Weather.swift; path = Model/Weather.swift; sourceTree = "<group>"; };
 		9EB1E7D41C64515400000764 /* WeatherRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherRequest.swift; path = Request/WeatherRequest.swift; sourceTree = "<group>"; };
 		9EB1E7D61C64518000000764 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		9EEB699E1C64673D005BCA74 /* District.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = District.swift; path = Model/District.swift; sourceTree = "<group>"; };
+		9EEB69A11C64725E005BCA74 /* primary_area.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = primary_area.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,15 +147,20 @@
 			isa = PBXGroup;
 			children = (
 				9EB1E7D11C64509200000764 /* Model */,
-				9EB1E7CE1C64504600000764 /* View */,
 				9EB1E7CD1C64502700000764 /* Request */,
+				9EEB69A01C647248005BCA74 /* Resources */,
+				9EB1E7CE1C64504600000764 /* View */,
 				9EB1E7CC1C64501C00000764 /* ViewModel */,
 				9EB1E7921C6444DB00000764 /* AppDelegate.swift */,
-				9EB1E7941C6444DB00000764 /* ViewController.swift */,
-				9EB1E7961C6444DB00000764 /* Main.storyboard */,
 				9EB1E7991C6444DB00000764 /* Assets.xcassets */,
-				9EB1E79B1C6444DB00000764 /* LaunchScreen.storyboard */,
+				9E0BA8051C6487E800C5A898 /* CityViewController.storyboard */,
+				9E0BA8031C6487DA00C5A898 /* CityViewController.swift */,
 				9EB1E79E1C6444DB00000764 /* Info.plist */,
+				9EB1E79B1C6444DB00000764 /* LaunchScreen.storyboard */,
+				9EB1E7961C6444DB00000764 /* Main.storyboard */,
+				9E0BA8011C64829100C5A898 /* PrefectureViewController.storyboard */,
+				9E0BA7FF1C64827400C5A898 /* PrefectureViewController.swift */,
+				9EB1E7941C6444DB00000764 /* ViewController.swift */,
 			);
 			path = WeatherForeCats;
 			sourceTree = "<group>";
@@ -193,8 +210,17 @@
 			isa = PBXGroup;
 			children = (
 				9EB1E7D21C6450AA00000764 /* Weather.swift */,
+				9EEB699E1C64673D005BCA74 /* District.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		9EEB69A01C647248005BCA74 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9EEB69A11C64725E005BCA74 /* primary_area.xml */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,7 +331,10 @@
 			files = (
 				9EB1E79D1C6444DB00000764 /* LaunchScreen.storyboard in Resources */,
 				9EB1E79A1C6444DB00000764 /* Assets.xcassets in Resources */,
+				9E0BA8061C6487E800C5A898 /* CityViewController.storyboard in Resources */,
 				9EB1E7981C6444DB00000764 /* Main.storyboard in Resources */,
+				9E0BA8021C64829100C5A898 /* PrefectureViewController.storyboard in Resources */,
+				9EEB69A21C64725E005BCA74 /* primary_area.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +380,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EB1E7D31C6450AA00000764 /* Weather.swift in Sources */,
+				9E0BA8001C64827400C5A898 /* PrefectureViewController.swift in Sources */,
+				9EEB699F1C64673D005BCA74 /* District.swift in Sources */,
+				9E0BA8041C6487DA00C5A898 /* CityViewController.swift in Sources */,
 				9EB1E7951C6444DB00000764 /* ViewController.swift in Sources */,
 				9EB1E7D01C64507300000764 /* TopViewModel.swift in Sources */,
 				9EB1E7D51C64515400000764 /* WeatherRequest.swift in Sources */,
@@ -587,6 +619,7 @@
 				9EB1E7B91C6444DB00000764 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9EB1E7BA1C6444DB00000764 /* Build configuration list for PBXNativeTarget "WeatherForeCatsTests" */ = {
 			isa = XCConfigurationList;
@@ -595,6 +628,7 @@
 				9EB1E7BC1C6444DB00000764 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9EB1E7BD1C6444DB00000764 /* Build configuration list for PBXNativeTarget "WeatherForeCatsUITests" */ = {
 			isa = XCConfigurationList;
@@ -603,6 +637,7 @@
 				9EB1E7BF1C6444DB00000764 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
