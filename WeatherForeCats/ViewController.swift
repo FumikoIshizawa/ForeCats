@@ -38,17 +38,23 @@ class ViewController: UIViewController {
     let configButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Edit, target: self, action: "onClickConfigButton:")
     topNavigationItem.setRightBarButtonItem(configButton, animated: true)
     todayWeatherDetailLabel.preferredMaxLayoutWidth = 250
-    let successBlock = { [weak self] in
-      self!.updateLabels()
-    }
     
     prepareForUseCollectionView()
     
-    if !firstLaunch {
-      city = readLocalData("city")
-      id = readLocalData("id")
+    city = readLocalData("city")
+    id = readLocalData("id")
+  }
+  
+  override func viewDidAppear(animated: Bool) {
+    if id.isEmpty {
+      loadConfigView()
+    } else {
+      detailLabelExpanded = false
+      let successBlock = { [weak self] in
+        self!.updateLabels()
+      }
+      topViewModel.prepareForeUse(id, block: successBlock)
     }
-    topViewModel.prepareForeUse(id, block: successBlock)
   }
 
   override func didReceiveMemoryWarning() {
@@ -79,12 +85,15 @@ extension ViewController {
   }
   
   private func updateDetailLabelExpand() {
-    if detailLabelExpanded {
-      expandButton.setImage(UIImage(named: "markUp"), forState: .Normal)
-    } else {
-      expandButton.setImage(UIImage(named: "markDown"), forState: .Normal)
-    }
-    todayWeatherDetailLabel.numberOfLines = detailLabelExpanded ? 0 : 2
+    UIView.animateWithDuration(0.2, animations: { [weak self] in
+      if self!.detailLabelExpanded {
+        self!.expandButton.setImage(UIImage(named: "markUp"), forState: .Normal)
+      } else {
+        self!.expandButton.setImage(UIImage(named: "markDown"), forState: .Normal)
+      }
+      self!.todayWeatherDetailLabel.numberOfLines = self!.detailLabelExpanded ? 0 : 2
+      self!.view.layoutIfNeeded()
+    })
   }
   
   private func configureCell(cell: ForecastCollectionViewCell, row: Int) {
@@ -98,17 +107,20 @@ extension ViewController {
 // MARK: - Action
 extension ViewController {
   internal func onClickConfigButton(sender: UIButton) {
+    loadConfigView()
+  }
+  
+  func loadConfigView() {
     let storyBoard = UIStoryboard(name: "PrefectureViewController", bundle: nil)
     if let prefectureViewController = storyBoard.instantiateInitialViewController() as? PrefectureViewController {
       prefectureViewController.dismissWindowBlock = { [weak self] (title: String, id: String) in
         self!.city = title
         self!.id = id
-        self!.topViewModel.updateData(id)
         self!.storeLocalData(title, id: id)
       }
       let navController = UINavigationController(rootViewController: prefectureViewController)
       self.presentViewController(navController, animated: true, completion: nil)
-    } 
+    }
   }
   
   func storeLocalData(title: String, id: String) {
