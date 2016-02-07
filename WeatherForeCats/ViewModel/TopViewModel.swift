@@ -10,9 +10,30 @@ import APIKit
 import UIKit
 
 class TopViewModel: NSObject {
-  var todayWeatherTitle: String = "指定されていません"
-  var todayWeatherDetail: String = "指定されていません"
+  var weather: Weather?
   var successBlock: (Void -> Void)?
+  var todayWeatherTitle: String {
+    if let weather = weather {
+      return weather.title ?? "指定されていません"
+    } else {
+      return "指定されていません"
+    }
+  }
+  var todayWeatherDetail: String {
+    if let weather = weather {
+      return weather.description["text"] ?? "指定されていません"
+    } else {
+      return "指定されていません"
+    }
+  }
+  
+  func loadForecastOfCity(row: Int) -> Forecast? {
+    if let weather = weather {
+      return weather.forecasts![row]
+    } else {
+      return nil
+    }
+  }
 
   func prepareForeUse(id: String, block: (Void -> Void)) {
     successBlock = block
@@ -26,22 +47,21 @@ class TopViewModel: NSObject {
 
 
 // MARK: - Request
-
 extension TopViewModel {
   private func requestDailyForecasts(id: String) {
+    SVProgressHUD.show()
     var request = GetDailyForecastsRequest()
     request.cityId = id
     Session.sendRequest(request) { result in
       switch result {
       case .Success(let weather):
-        self.todayWeatherTitle = weather.title ?? "指定されていません"
-        self.todayWeatherDetail = weather.description["text"] ?? "指定されていません"
+        self.weather = weather
         if let successBlock = self.successBlock {
           successBlock()
         }
         print(weather.description)
       case .Failure(let error):
-        print("error: \(error)")
+        SVProgressHUD.showErrorWithStatus("通信に失敗しました: \(error)")
       }
     }
   }
