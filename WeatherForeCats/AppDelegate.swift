@@ -15,8 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    print("firstLaunch")
     let ud = NSUserDefaults.standardUserDefaults()
-    ud.setObject(true, forKey: "firstLaunch")
+    ud.setObject(false, forKey: "firstLaunch")
     ud.synchronize()
     return true
   }
@@ -36,7 +37,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   func applicationDidBecomeActive(application: UIApplication) {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    if !CheckReachability("http://weather.livedoor.com/forecast/webservice/json/") {
+      let alertController = UIAlertController(title: "インターネットに\n接続してください", message: "本アプリは\nインターネット接続が必要です", preferredStyle: .Alert)
+      let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
+      alertController.addAction(action)
+      self.window?.rootViewController?.presentViewController(alertController, animated: true, completion: nil)
+    }
   }
 
   func applicationWillTerminate(application: UIApplication) {

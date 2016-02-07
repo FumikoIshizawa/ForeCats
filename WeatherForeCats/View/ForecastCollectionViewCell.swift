@@ -38,25 +38,4 @@ class ForecastCollectionViewCell: UICollectionViewCell {
       maxTempLabel.text = ""
     }
   }
-  
-  private func createImagePath(weather: String) -> String {
-    var imagePath = String()
-    if weather.rangeOfString("晴") != nil {
-      imagePath += "sunny"
-    }
-    
-    if weather.rangeOfString("雨") != nil {
-      imagePath += "rain"
-    }
-    
-    if weather.rangeOfString("雪") != nil {
-      imagePath += "snow"
-    }
-    
-    if weather.rangeOfString("曇") != nil {
-      imagePath += "cloud"
-    }
-    
-    return imagePath
-  }
 }

@@ -17,26 +17,26 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n6X-4D-86p">
                         <rect key="frame" x="10" y="10" width="230" height="180"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2月10日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFe-yK-2Bh">
-                                <rect key="frame" x="91" y="15" width="48" height="12"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日付" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFe-yK-2Bh">
+                                <rect key="frame" x="103" y="15" width="24" height="12"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="12"/>
                                 <color key="textColor" red="0.90980392160000001" green="1" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="はれ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDy-jf-9RC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天気" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDy-jf-9RC">
                                 <rect key="frame" x="98" y="117" width="34" height="17"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
                                 <color key="textColor" red="0.90980392156862744" green="1" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最高気温 30℃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39n-ln-332">
-                                <rect key="frame" x="78" y="144" width="73.5" height="11"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最高気温" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39n-ln-332">
+                                <rect key="frame" x="93" y="144" width="44" height="11"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="11"/>
                                 <color key="textColor" red="0.90980392160000001" green="1" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最低気温 25℃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jm-Rg-Gb4">
-                                <rect key="frame" x="78.5" y="160" width="73.5" height="11"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最低気温" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jm-Rg-Gb4">
+                                <rect key="frame" x="93" y="157" width="44" height="11"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="11"/>
                                 <color key="textColor" red="0.90980392160000001" green="1" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -49,12 +49,12 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.24313725490196078" green="0.75686274509803919" blue="0.82745098039215681" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.24313725489999999" green="0.75686274509999996" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="1Jm-Rg-Gb4" firstAttribute="leading" secondItem="Ie6-T2-lnL" secondAttribute="trailing" constant="15" id="5mG-O2-SfL"/>
                             <constraint firstItem="oFe-yK-2Bh" firstAttribute="top" secondItem="n6X-4D-86p" secondAttribute="top" constant="15" id="8RE-GR-sS6"/>
-                            <constraint firstItem="1Jm-Rg-Gb4" firstAttribute="top" secondItem="39n-ln-332" secondAttribute="bottom" constant="5" id="8ao-cZ-cki"/>
+                            <constraint firstItem="1Jm-Rg-Gb4" firstAttribute="top" secondItem="39n-ln-332" secondAttribute="bottom" constant="2" id="8ao-cZ-cki"/>
                             <constraint firstItem="Ie6-T2-lnL" firstAttribute="leading" secondItem="oFe-yK-2Bh" secondAttribute="trailing" constant="15" id="DjT-nD-74J"/>
                             <constraint firstItem="oFe-yK-2Bh" firstAttribute="leading" secondItem="Ie6-T2-lnL" secondAttribute="trailing" constant="15" id="ES9-ZA-YQ3"/>
                             <constraint firstItem="oFe-yK-2Bh" firstAttribute="centerX" secondItem="n6X-4D-86p" secondAttribute="centerX" id="EUW-Cx-1mg"/>
@@ -77,6 +77,18 @@
                             <constraint firstItem="KDy-jf-9RC" firstAttribute="leading" secondItem="Ie6-T2-lnL" secondAttribute="trailing" constant="15" id="uvq-SM-KGI"/>
                             <constraint firstItem="KDy-jf-9RC" firstAttribute="top" secondItem="oFe-yK-2Bh" secondAttribute="bottom" constant="10" id="x8W-eN-npa"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                <integer key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                <color key="value" red="0.96470588235294119" green="0.96862745098039216" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="DjT-nD-74J"/>
@@ -99,7 +111,7 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
-            <color key="backgroundColor" red="0.96470588235294119" green="0.96862745098039216" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.24313725489999999" green="0.75686274509999996" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="n6X-4D-86p" secondAttribute="trailing" constant="10" id="Orf-vk-z3f"/>
                 <constraint firstItem="n6X-4D-86p" firstAttribute="leading" secondItem="ral-8M-hRI" secondAttribute="leading" constant="10" id="PKY-qD-NEv"/>

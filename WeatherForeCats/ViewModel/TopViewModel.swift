@@ -21,9 +21,17 @@ class TopViewModel: NSObject {
   }
   var todayWeatherDetail: String {
     if let weather = weather {
-      return weather.description["text"] ?? "指定されていません"
+      return weather.description["text"] ?? ""
     } else {
-      return "指定されていません"
+      return ""
+    }
+  }
+  var todayWeatherImageViewPath: String {
+    if let weather = weather, forecast = weather.forecasts {
+      let telop = forecast[0].telop ?? "sunny"
+      return createImagePath(telop)
+    } else {
+      return "sunny"
     }
   }
   
@@ -59,9 +67,9 @@ extension TopViewModel {
         if let successBlock = self.successBlock {
           successBlock()
         }
-        print(weather.description)
       case .Failure(let error):
-        SVProgressHUD.showErrorWithStatus("通信に失敗しました: \(error)")
+        SVProgressHUD.showErrorWithStatus("通信に失敗しました")
+        print("Error: \(error)")
       }
     }
   }

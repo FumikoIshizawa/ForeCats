@@ -15,6 +15,9 @@
 		9E0BA8091C65989600C5A898 /* SVProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9E0BA8071C65989600C5A898 /* SVProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9E0BA80C1C65A8E300C5A898 /* ForecastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0BA80B1C65A8E300C5A898 /* ForecastCollectionViewCell.swift */; };
 		9E0BA80E1C65A8FE00C5A898 /* ForecastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E0BA80D1C65A8FE00C5A898 /* ForecastCollectionViewCell.xib */; };
+		9E0BA8111C6707E300C5A898 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E0BA8101C6707E300C5A898 /* SystemConfiguration.framework */; };
+		9E0BA8131C67083800C5A898 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0BA8121C67083800C5A898 /* Utils.swift */; };
+		9E0BA8191C67799D00C5A898 /* CALayer+RuntimeAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0BA8181C67799D00C5A898 /* CALayer+RuntimeAttribute.swift */; };
 		9EB1E7931C6444DB00000764 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB1E7921C6444DB00000764 /* AppDelegate.swift */; };
 		9EB1E7951C6444DB00000764 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB1E7941C6444DB00000764 /* ViewController.swift */; };
 		9EB1E7981C6444DB00000764 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EB1E7961C6444DB00000764 /* Main.storyboard */; };
@@ -78,6 +81,9 @@
 		9E0BA80A1C65992400C5A898 /* WeatherForeCats-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeatherForeCats-Bridging-Header.h"; sourceTree = "<group>"; };
 		9E0BA80B1C65A8E300C5A898 /* ForecastCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForecastCollectionViewCell.swift; path = View/ForecastCollectionViewCell.swift; sourceTree = "<group>"; };
 		9E0BA80D1C65A8FE00C5A898 /* ForecastCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ForecastCollectionViewCell.xib; path = View/ForecastCollectionViewCell.xib; sourceTree = "<group>"; };
+		9E0BA8101C6707E300C5A898 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9E0BA8121C67083800C5A898 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Utils/Utils.swift; sourceTree = "<group>"; };
+		9E0BA8181C67799D00C5A898 /* CALayer+RuntimeAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CALayer+RuntimeAttribute.swift"; path = "Utils/CALayer+RuntimeAttribute.swift"; sourceTree = "<group>"; };
 		9EB1E78F1C6444DB00000764 /* WeatherForeCats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForeCats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EB1E7921C6444DB00000764 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EB1E7941C6444DB00000764 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E0BA8111C6707E300C5A898 /* SystemConfiguration.framework in Frameworks */,
 				9EB1E7D71C64518000000764 /* ObjectMapper.framework in Frameworks */,
 				9EB1E7C51C6446AC00000764 /* APIKit.framework in Frameworks */,
 				9E0BA8081C65989600C5A898 /* SVProgressHUD.framework in Frameworks */,
@@ -143,9 +150,19 @@
 			name = ViewController;
 			sourceTree = "<group>";
 		};
+		9E0BA8141C67085D00C5A898 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9E0BA8121C67083800C5A898 /* Utils.swift */,
+				9E0BA8181C67799D00C5A898 /* CALayer+RuntimeAttribute.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		9EB1E7861C6444DB00000764 = {
 			isa = PBXGroup;
 			children = (
+				9E0BA8101C6707E300C5A898 /* SystemConfiguration.framework */,
 				9E0BA8071C65989600C5A898 /* SVProgressHUD.framework */,
 				9EB1E7D61C64518000000764 /* ObjectMapper.framework */,
 				9EB1E7C91C644AD900000764 /* Result.framework */,
@@ -170,6 +187,7 @@
 		9EB1E7911C6444DB00000764 /* WeatherForeCats */ = {
 			isa = PBXGroup;
 			children = (
+				9E0BA8141C67085D00C5A898 /* Utils */,
 				9EB1E7D11C64509200000764 /* Model */,
 				9EB1E7CD1C64502700000764 /* Request */,
 				9EEB69A01C647248005BCA74 /* Resources */,
@@ -408,9 +426,11 @@
 				9EEB699F1C64673D005BCA74 /* District.swift in Sources */,
 				9E0BA8041C6487DA00C5A898 /* CityViewController.swift in Sources */,
 				9EB1E7951C6444DB00000764 /* ViewController.swift in Sources */,
+				9E0BA8131C67083800C5A898 /* Utils.swift in Sources */,
 				9E0BA80C1C65A8E300C5A898 /* ForecastCollectionViewCell.swift in Sources */,
 				9EB1E7D01C64507300000764 /* TopViewModel.swift in Sources */,
 				9EB1E7D51C64515400000764 /* WeatherRequest.swift in Sources */,
+				9E0BA8191C67799D00C5A898 /* CALayer+RuntimeAttribute.swift in Sources */,
 				9EB1E7931C6444DB00000764 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,6 +576,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = WeatherForeCats/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.WeatherForeCats;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -572,6 +593,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = WeatherForeCats/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.WeatherForeCats;
 				PRODUCT_NAME = "$(TARGET_NAME)";

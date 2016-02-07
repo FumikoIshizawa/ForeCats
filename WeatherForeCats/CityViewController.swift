@@ -27,6 +27,8 @@ class CityViewController: UIViewController {
   func prepareForUseTableView() {
     tableView.delegate = self
     tableView.dataSource = self
+    
+    tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cityCell")
   }
 }
 
@@ -56,7 +58,7 @@ extension CityViewController: UITableViewDataSource {
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = UITableViewCell()
+    let cell = tableView.dequeueReusableCellWithIdentifier("cityCell", forIndexPath: indexPath)
     if let title = cities![indexPath.row]["title"] {
       cell.textLabel?.text = title
     }

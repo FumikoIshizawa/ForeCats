@@ -30,6 +30,19 @@ class PrefectureViewController: UIViewController {
   func prepareForUseTableView() {
     tableView.delegate = self
     tableView.dataSource = self
+    
+    tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "preCell")
+  }
+}
+
+
+// MARK: - View
+extension PrefectureViewController {
+  private func configureCell(cell: UITableViewCell, row: Int) {
+    if let title = district.dic[row]["title"] as? String {
+      cell.textLabel?.text = title
+    }
+    cell.textLabel?.font = UIFont(name: "HiraKakuProN-W3", size: 14)
   }
 }
 
@@ -77,12 +90,8 @@ extension PrefectureViewController: UITableViewDataSource {
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = UITableViewCell()
-    if let title = district.dic[indexPath.row]["title"] as? String {
-      cell.textLabel?.text = title
-    }
-    cell.textLabel?.font = UIFont(name: "HiraKakuProN-W3", size: 14)
-    
+    let cell = tableView.dequeueReusableCellWithIdentifier("preCell", forIndexPath: indexPath)
+    configureCell(cell, row: indexPath.row)
     return cell
   }
 }

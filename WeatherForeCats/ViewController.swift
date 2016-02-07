@@ -13,16 +13,23 @@ class ViewController: UIViewController {
   let topViewModel = TopViewModel()
   var city: String = "新潟"
   var id: String = "150010"
+  var detailLabelExpanded: Bool = false
   @IBOutlet weak var todayWeatherImageView: UIImageView!
   @IBOutlet weak var todayWeatherTitleLabel: UILabel!
   @IBOutlet weak var todayWeatherDetailLabel: UILabel!
   @IBOutlet weak var topNavigationItem: UINavigationItem!
   @IBOutlet weak var forecastCollectionView: UICollectionView!
+  @IBOutlet weak var expandButton: UIButton!
   
   var firstLaunch: Bool {
     let ud = NSUserDefaults.standardUserDefaults()
     let data = ud.objectForKey("firstLaunch") as? Bool ?? false
     return data
+  }
+  
+  @IBAction func expandButtonTouchUpInside(sender: UIButton) {
+    detailLabelExpanded = detailLabelExpanded ? false : true
+    updateDetailLabelExpand()
   }
 
   override func viewDidLoad() {
@@ -30,7 +37,7 @@ class ViewController: UIViewController {
     
     let configButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Edit, target: self, action: "onClickConfigButton:")
     topNavigationItem.setRightBarButtonItem(configButton, animated: true)
-    
+    todayWeatherDetailLabel.preferredMaxLayoutWidth = 250
     let successBlock = { [weak self] in
       self!.updateLabels()
     }
@@ -64,8 +71,20 @@ extension ViewController {
   private func updateLabels() {
     todayWeatherTitleLabel.text = topViewModel.todayWeatherTitle
     todayWeatherDetailLabel.text = topViewModel.todayWeatherDetail
+    let imagePath = topViewModel.todayWeatherImageViewPath
+    todayWeatherImageView.image = UIImage(named: imagePath)
+    updateDetailLabelExpand()
     forecastCollectionView.reloadData()
     SVProgressHUD.dismiss()
+  }
+  
+  private func updateDetailLabelExpand() {
+    if detailLabelExpanded {
+      expandButton.setImage(UIImage(named: "markUp"), forState: .Normal)
+    } else {
+      expandButton.setImage(UIImage(named: "markDown"), forState: .Normal)
+    }
+    todayWeatherDetailLabel.numberOfLines = detailLabelExpanded ? 0 : 2
   }
   
   private func configureCell(cell: ForecastCollectionViewCell, row: Int) {
