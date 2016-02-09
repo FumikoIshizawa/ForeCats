@@ -20,6 +20,8 @@ class ViewController: UIViewController {
   @IBOutlet weak var topNavigationItem: UINavigationItem!
   @IBOutlet weak var forecastCollectionView: UICollectionView!
   @IBOutlet weak var expandButton: UIButton!
+  @IBOutlet weak var leftButtonImage: UIImageView!
+  @IBOutlet weak var rightButtonImage: UIImageView!
   
   var firstLaunch: Bool {
     let ud = NSUserDefaults.standardUserDefaults()
@@ -28,6 +30,11 @@ class ViewController: UIViewController {
   }
   
   @IBAction func expandButtonTouchUpInside(sender: UIButton) {
+    detailLabelExpanded = detailLabelExpanded ? false : true
+    updateDetailLabelExpand()
+  }
+  
+  @IBAction func expandLabelButtonTouchUpInside(sender: UIButton) {
     detailLabelExpanded = detailLabelExpanded ? false : true
     updateDetailLabelExpand()
   }
@@ -147,6 +154,21 @@ extension ViewController: UICollectionViewDelegate {
       configureCell(cell, row: indexPath.row)
     }
     return cell
+  }
+  
+  func scrollViewDidScroll(scrollView: UIScrollView) {
+    let viewHeight = forecastCollectionView.frame.size.width
+    let viewContentSizeHeight = forecastCollectionView.contentSize.width
+    let scrollOffset = forecastCollectionView.contentOffset.x
+    
+    if (scrollOffset == 0) {
+      leftButtonImage.image = UIImage(named: "right-none")
+    } else if (scrollOffset + viewHeight == viewContentSizeHeight) {
+      rightButtonImage.image = UIImage(named: "left-none")
+    } else {
+      leftButtonImage.image = UIImage(named: "right")
+      rightButtonImage.image = UIImage(named: "left")
+    }
   }
 }
 

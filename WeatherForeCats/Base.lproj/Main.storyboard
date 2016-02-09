@@ -54,7 +54,7 @@
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bb6-qi-3lk">
-                                        <rect key="frame" x="175" y="213" width="250" height="0.0"/>
+                                        <rect key="frame" x="175" y="213" width="250" height="12"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="bwH-en-RUi"/>
                                         </constraints>
@@ -63,7 +63,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ue3-HB-V1x">
-                                        <rect key="frame" x="292.5" y="216" width="15" height="15"/>
+                                        <rect key="frame" x="292" y="228" width="15" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="E6x-zH-ycF"/>
                                             <constraint firstAttribute="width" constant="15" id="Q64-is-TZe"/>
@@ -73,8 +73,14 @@
                                             <action selector="expandButtonTouchUpInside:" destination="fDb-we-WvT" eventType="touchUpInside" id="hOd-jw-wpN"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dkt-HN-Z7A">
+                                        <rect key="frame" x="175" y="213" width="250" height="30"/>
+                                        <connections>
+                                            <action selector="expandLabelButtonTouchUpInside:" destination="fDb-we-WvT" eventType="touchUpInside" id="LCw-yB-Cbw"/>
+                                        </connections>
+                                    </button>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ABV-jG-0BQ">
-                                        <rect key="frame" x="0.0" y="243" width="600" height="200"/>
+                                        <rect key="frame" x="0.0" y="255" width="600" height="200"/>
                                         <color key="backgroundColor" red="0.24313725489999999" green="0.75686274509999996" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="X66-vs-MCu"/>
@@ -88,17 +94,17 @@
                                         <cells/>
                                     </collectionView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right" translatesAutoresizingMaskIntoConstraints="NO" id="Yer-Xz-nUY">
-                                        <rect key="frame" x="15" y="423" width="20" height="20"/>
+                                        <rect key="frame" x="15" y="430" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="20" id="E0K-DB-piu"/>
-                                            <constraint firstAttribute="height" constant="20" id="ppn-ZX-Ksz"/>
+                                            <constraint firstAttribute="width" constant="30" id="E0K-DB-piu"/>
+                                            <constraint firstAttribute="height" constant="30" id="ppn-ZX-Ksz"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left" translatesAutoresizingMaskIntoConstraints="NO" id="CoN-0a-2TE">
-                                        <rect key="frame" x="565" y="423" width="20" height="20"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="left" translatesAutoresizingMaskIntoConstraints="NO" id="CoN-0a-2TE">
+                                        <rect key="frame" x="554" y="432" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="20" id="LCK-cB-PTT"/>
-                                            <constraint firstAttribute="height" constant="20" id="okl-4u-3F3"/>
+                                            <constraint firstAttribute="width" constant="30" id="LCK-cB-PTT"/>
+                                            <constraint firstAttribute="height" constant="30" id="okl-4u-3F3"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -107,6 +113,7 @@
                                     <constraint firstItem="Yer-Xz-nUY" firstAttribute="leading" secondItem="QHt-rq-UdG" secondAttribute="leading" constant="15" id="6iL-be-5dD"/>
                                     <constraint firstAttribute="trailing" secondItem="ABV-jG-0BQ" secondAttribute="trailing" id="8Da-3L-pa7"/>
                                     <constraint firstItem="CoN-0a-2TE" firstAttribute="centerY" secondItem="ABV-jG-0BQ" secondAttribute="bottom" constant="-10" id="Ark-i2-9Nk"/>
+                                    <constraint firstItem="Dkt-HN-Z7A" firstAttribute="bottom" secondItem="bb6-qi-3lk" secondAttribute="bottom" id="EJC-kc-VXz"/>
                                     <constraint firstItem="ue3-HB-V1x" firstAttribute="centerX" secondItem="QHt-rq-UdG" secondAttribute="centerX" id="FoV-wW-TqF"/>
                                     <constraint firstItem="ABV-jG-0BQ" firstAttribute="top" secondItem="bb6-qi-3lk" secondAttribute="bottom" constant="30" id="G49-kQ-ctn"/>
                                     <constraint firstItem="ue3-HB-V1x" firstAttribute="top" secondItem="bb6-qi-3lk" secondAttribute="bottom" constant="3" id="GbH-rk-NTh"/>
@@ -114,12 +121,21 @@
                                     <constraint firstItem="bb6-qi-3lk" firstAttribute="centerX" secondItem="QHt-rq-UdG" secondAttribute="centerX" id="MIN-Cz-xan"/>
                                     <constraint firstItem="ABV-jG-0BQ" firstAttribute="centerX" secondItem="QHt-rq-UdG" secondAttribute="centerX" id="SWg-Pl-nFl"/>
                                     <constraint firstItem="E0E-Ui-Mkh" firstAttribute="top" secondItem="o73-WA-zim" secondAttribute="bottom" constant="15" id="YXe-Y5-8cU"/>
+                                    <constraint firstItem="Dkt-HN-Z7A" firstAttribute="bottom" secondItem="ue3-HB-V1x" secondAttribute="bottom" id="ZHc-Bp-nHg"/>
+                                    <constraint firstItem="Dkt-HN-Z7A" firstAttribute="leading" secondItem="bb6-qi-3lk" secondAttribute="leading" id="dk7-yR-lvg"/>
                                     <constraint firstItem="bb6-qi-3lk" firstAttribute="top" secondItem="E0E-Ui-Mkh" secondAttribute="bottom" constant="5" id="g22-j6-ava"/>
+                                    <constraint firstItem="Dkt-HN-Z7A" firstAttribute="top" secondItem="bb6-qi-3lk" secondAttribute="top" id="jsa-0n-z3J"/>
                                     <constraint firstItem="ABV-jG-0BQ" firstAttribute="leading" secondItem="QHt-rq-UdG" secondAttribute="leading" id="kUA-Zv-IXo"/>
                                     <constraint firstItem="Yer-Xz-nUY" firstAttribute="centerY" secondItem="ABV-jG-0BQ" secondAttribute="bottom" constant="-10" id="ksl-Ym-Gk8"/>
+                                    <constraint firstItem="Dkt-HN-Z7A" firstAttribute="trailing" secondItem="bb6-qi-3lk" secondAttribute="trailing" id="ufJ-rj-02L"/>
                                     <constraint firstItem="o73-WA-zim" firstAttribute="top" secondItem="QHt-rq-UdG" secondAttribute="top" constant="25" id="uvE-N9-9cb"/>
-                                    <constraint firstAttribute="bottom" secondItem="ABV-jG-0BQ" secondAttribute="bottom" constant="25" id="yzW-5O-LLS"/>
+                                    <constraint firstAttribute="bottom" secondItem="ABV-jG-0BQ" secondAttribute="bottom" constant="40" id="yzW-5O-LLS"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="EJC-kc-VXz"/>
+                                    </mask>
+                                </variation>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.24313725489999999" green="0.75686274509999996" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -152,6 +168,8 @@
                     <connections>
                         <outlet property="expandButton" destination="ue3-HB-V1x" id="wCF-hE-AqJ"/>
                         <outlet property="forecastCollectionView" destination="ABV-jG-0BQ" id="ItX-We-nM6"/>
+                        <outlet property="leftButtonImage" destination="Yer-Xz-nUY" id="f5T-ef-Z4V"/>
+                        <outlet property="rightButtonImage" destination="CoN-0a-2TE" id="A6s-re-FAh"/>
                         <outlet property="todayWeatherDetailLabel" destination="bb6-qi-3lk" id="G50-pY-6mB"/>
                         <outlet property="todayWeatherImageView" destination="o73-WA-zim" id="IA0-55-naR"/>
                         <outlet property="todayWeatherTitleLabel" destination="E0E-Ui-Mkh" id="Mjh-Li-mAb"/>
