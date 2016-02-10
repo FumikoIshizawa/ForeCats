@@ -22,8 +22,16 @@ class WeatherForeCatsTests: XCTestCase {
     }
     
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let name1 = createImagePath("曇のち晴")
+        XCTAssertEqual(name1, "sunnycloud")
+        let image1 = UIImage(named: name1)
+        XCTAssertNotNil(image1)
+        let name2 = createImagePath("曇時々雨")
+        XCTAssertEqual(name2, "raincloud")
+        let image2 = UIImage(named: name2)
+        XCTAssertNotNil(image2)
+        let name3 = createImagePath("雪のち雨")
+        XCTAssertEqual(name3, "sunny")
     }
     
     func testPerformanceExample() {

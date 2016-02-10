@@ -27,6 +27,7 @@ func CheckReachability(hostName: String) -> Bool {
 }
 
 func createImagePath(weather: String) -> String {
+  let imagePaths = ["sunny", "sunnycloud", "sunnyrain", "rain", "raincloud", "snow", "snowcloud", "cloud"]
   var imagePath = String()
   if weather.rangeOfString("晴") != nil {
     imagePath += "sunny"
@@ -44,7 +45,7 @@ func createImagePath(weather: String) -> String {
     imagePath += "cloud"
   }
   
-  imagePath = imagePath.isEmpty ? "sunny" : imagePath
+  imagePath = imagePaths.indexOf(imagePath) == nil ? "sunny" : imagePath
   
   return imagePath
 }
