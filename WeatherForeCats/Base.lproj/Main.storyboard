@@ -45,7 +45,7 @@
                                             <constraint firstAttribute="height" constant="40" id="zCb-l0-0Zr"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="18"/>
-                                        <color key="textColor" red="0.96470588239999999" green="0.96862745100000003" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -58,8 +58,8 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="bwH-en-RUi"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="12"/>
-                                        <color key="textColor" red="0.96470588239999999" green="0.96862745100000003" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ue3-HB-V1x">
@@ -100,8 +100,8 @@
                                             <constraint firstAttribute="height" constant="30" id="ppn-ZX-Ksz"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="left" translatesAutoresizingMaskIntoConstraints="NO" id="CoN-0a-2TE">
-                                        <rect key="frame" x="554" y="432" width="30" height="30"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left" translatesAutoresizingMaskIntoConstraints="NO" id="CoN-0a-2TE">
+                                        <rect key="frame" x="555" y="430" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="LCK-cB-PTT"/>
                                             <constraint firstAttribute="height" constant="30" id="okl-4u-3F3"/>

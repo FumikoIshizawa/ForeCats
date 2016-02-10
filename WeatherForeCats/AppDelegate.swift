@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   func applicationDidBecomeActive(application: UIApplication) {
-    if !CheckReachability("http://weather.livedoor.com/forecast/webservice/json/") {
+    if !CheckReachability("http://weather.livedoor.com/") {
       let alertController = UIAlertController(title: "インターネットに\n接続してください", message: "本アプリは\nインターネット接続が必要です", preferredStyle: .Alert)
       let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
       alertController.addAction(action)

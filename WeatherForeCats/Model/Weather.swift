@@ -34,6 +34,7 @@ class Weather: Mappable {
   }
 }
 
+
 class Forecast: Mappable {
   var dateLabel: String?
   var telop: String?

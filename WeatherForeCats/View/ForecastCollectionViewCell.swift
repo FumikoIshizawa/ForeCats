@@ -27,15 +27,15 @@ class ForecastCollectionViewCell: UICollectionViewCell {
     }
     
     if let minTemp = data.temperature["min"]!["celsius"] as? String {
-      minTempLabel.text = "最低気温\(minTemp)℃"
+      minTempLabel.text = "最低気温 \(minTemp)℃"
     } else {
-      minTempLabel.text = ""
+      minTempLabel.text = "最低気温"
     }
     
     if let maxTemp = data.temperature["max"]!["celsius"] as? String {
-      maxTempLabel.text = "最高気温\(maxTemp)℃"
+      maxTempLabel.text = "最高気温 \(maxTemp)℃"
     } else {
-      maxTempLabel.text = ""
+      maxTempLabel.text = "最高気温"
     }
   }
 }

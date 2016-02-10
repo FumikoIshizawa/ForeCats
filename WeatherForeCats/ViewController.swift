@@ -23,12 +23,6 @@ class ViewController: UIViewController {
   @IBOutlet weak var leftButtonImage: UIImageView!
   @IBOutlet weak var rightButtonImage: UIImageView!
   
-  var firstLaunch: Bool {
-    let ud = NSUserDefaults.standardUserDefaults()
-    let data = ud.objectForKey("firstLaunch") as? Bool ?? false
-    return data
-  }
-  
   @IBAction func expandButtonTouchUpInside(sender: UIButton) {
     detailLabelExpanded = detailLabelExpanded ? false : true
     updateDetailLabelExpand()
@@ -53,6 +47,8 @@ class ViewController: UIViewController {
   }
   
   override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+    
     if id.isEmpty {
       loadConfigView()
     } else {
@@ -134,7 +130,6 @@ extension ViewController {
     let ud = NSUserDefaults.standardUserDefaults()
     ud.setObject(title, forKey: "city")
     ud.setObject(id, forKey: "id")
-    ud.setObject(false, forKey: "firstLaunch")
     ud.synchronize()
   }
   
